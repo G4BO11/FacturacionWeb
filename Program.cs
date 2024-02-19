@@ -1,7 +1,18 @@
+using FacturacionWeb.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Repository
+// Services
+
+//Entity Framework Injeccion
+builder.Services.AddDbContext<FacturacionWebContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnection"));
+});
 
 var app = builder.Build();
 
