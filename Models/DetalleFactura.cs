@@ -16,8 +16,10 @@ public class DetalleFactura
     public int ValorRegistro { get; set; }
     public int CodigoFactura { get; set; }
     public int CodigoProducto { get; set; }
-    [ForeignKey("CodigoProducto")]
-    public virtual ICollection<Producto>? Producto { get; set; }
+
     [ForeignKey("CodigoFactura")]
-    public Factura? Factura { get; set; }
+    public virtual Factura? Factura { get; set; }
+
+    [ForeignKey("CodigoProducto")]
+    public virtual Producto? Producto { get; set; }
 }

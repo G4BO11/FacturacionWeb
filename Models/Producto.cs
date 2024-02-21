@@ -15,5 +15,6 @@ public class Producto
     [Required]
     [Column(TypeName = "decimal(18, 2)")]
     public decimal ValorUnitario { get; set; }
-    public ICollection<DetalleFactura>? DetalleFactura { get; set; }
+    public virtual ICollection<DetalleFactura>? DetalleFactura { get; set; }
+
 }

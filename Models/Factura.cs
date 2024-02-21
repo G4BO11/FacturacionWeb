@@ -20,7 +20,7 @@ public class Factura
     public decimal ValorDescuento { get; set; }
     [Column(TypeName = "decimal(18, 2)")]
     public decimal ValorTotal { get; set; }
-    public ICollection<DetalleFactura>? DetalleFactura { get; set; }
+    public virtual ICollection<DetalleFactura>? DetalleFactura { get; set; }
 
 }
 public enum AplicaDescuento { SI, NO }
