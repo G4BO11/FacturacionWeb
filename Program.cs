@@ -1,4 +1,7 @@
+using FacturacionWeb.DTO;
 using FacturacionWeb.Models;
+using FacturacionWeb.Repository;
+using FacturacionWeb.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Repository
+builder.Services.AddScoped<IRepository<Producto>, ProductoRepository>();
 // Services
+builder.Services.AddScoped<ICommonService<ProductoDto, ProductoInsertDto>, ProductoService>();
 
 //Entity Framework Injeccion
 builder.Services.AddDbContext<FacturacionWebContext>(options =>

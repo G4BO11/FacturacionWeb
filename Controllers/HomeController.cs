@@ -1,26 +1,27 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using FacturacionWeb.Models;
+using FacturacionWeb.Services;
+using FacturacionWeb.DTO;
 
 namespace FacturacionWeb.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly ICommonService<ProductoDto, ProductoInsertDto> _productoService;
 
-    public HomeController(ILogger<HomeController> logger)
+
+    public HomeController(ILogger<HomeController> logger, ICommonService<ProductoDto, ProductoInsertDto> productoService)
     {
         _logger = logger;
+        _productoService = productoService;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> IndexAsync()
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
+        var productos = await _productoService.Get();
+        return View(productos);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,7 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home";
 }
+@model IEnumerable<ProductoDto>
 
-<section class="text-center">
-    <h1 class="text-xl font-semibold">No hay facturas por el momento</h1>
+<section class="felx felx-col justify-center">
+    <!-- <h1 class="text-xl font-semibold">No hay facturas por el momento</h1> -->
+    <h2>Productos</h2>
+    <div class="grid grid-cols-3 w-full">
+        @foreach (var producto in Model)
+        {
+            <div class="bg-red-400 flex flex-col p-5 justify-center items-center">
+                <ul>
+                    <li>@producto.Referencia</li>
+                    <li>@producto.Descripcion</li>
+                    <li>@producto.ValorUnitario</li>
+                </ul>
+            </div>
+        }
+    </div>
 </section>
