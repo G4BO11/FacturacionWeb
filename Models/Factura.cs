@@ -15,12 +15,8 @@ public class Factura
     [Required]
     public int NIT { get; set; }
     public int NumeroFactura { get; set; }
-    public AplicaDescuento AplicaDescuento { get; set; }
-    [Column(TypeName = "decimal(18, 2)")]
-    public decimal ValorDescuento { get; set; }
     [Column(TypeName = "decimal(18, 2)")]
     public decimal ValorTotal { get; set; }
     public virtual ICollection<DetalleFactura>? DetalleFactura { get; set; }
 
 }
-public enum AplicaDescuento { SI, NO }

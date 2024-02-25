@@ -3,19 +3,21 @@
 }
 @model IEnumerable<ProductoDto>
 
-<section class="felx felx-col justify-center">
-    <!-- <h1 class="text-xl font-semibold">No hay facturas por el momento</h1> -->
-    <h2>Productos</h2>
-    <div class="grid grid-cols-3 w-full">
+<section class="p-5 bg-white">
+    <h2 class="text-2xl font-semibold mb-4 tracking-tight">Productos</h2>
+    <div class="grid grid-cols-[repeat(3,300px)] w-full gap-3 justify-center">
         @foreach (var producto in Model)
         {
-            <div class="bg-red-400 flex flex-col p-5 justify-center items-center">
+            <div class="bg-slate-100 flex flex-col p-5 rounded-md">
                 <ul>
                     <li>@producto.Referencia</li>
                     <li>@producto.Descripcion</li>
-                    <li>@producto.ValorUnitario</li>
+                    <li><strong>COP</strong> @producto.ValorUnitario</li>
                 </ul>
             </div>
         }
     </div>
 </section>
+<a asp-action="CrearFactura" asp-controller="Factura"
+    class="w-full p-3 mt-4 rounded-lg bg-slate-600 font-medium text-white flex justify-center items-center"> Crear una
+    factura? </a>

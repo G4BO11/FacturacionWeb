@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FacturacionWeb.Migrations
 {
     [DbContext(typeof(FacturacionWebContext))]
-    [Migration("20240221181242_StartDataBase")]
-    partial class StartDataBase
+    [Migration("20240225232957_InitialCreateDatabase")]
+    partial class InitialCreateDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,9 +64,6 @@ namespace FacturacionWeb.Migrations
                     b.Property<int>("CodigoProducto")
                         .HasColumnType("int");
 
-                    b.Property<double>("DescuentoProducto")
-                        .HasColumnType("float");
-
                     b.Property<int>("ValorRegistro")
                         .HasColumnType("int");
 
@@ -87,9 +84,6 @@ namespace FacturacionWeb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"));
 
-                    b.Property<int>("AplicaDescuento")
-                        .HasColumnType("int");
-
                     b.Property<string>("Cliente")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -102,9 +96,6 @@ namespace FacturacionWeb.Migrations
 
                     b.Property<int>("NumeroFactura")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("ValorDescuento")
-                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("decimal(18, 2)");
