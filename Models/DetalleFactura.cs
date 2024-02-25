@@ -9,7 +9,7 @@ public class DetalleFactura
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Codigo { get; set; }
     [Required]
-    public double DescuentoProducto { get; set; }
+    public decimal DescuentoProducto { get; set; }
     [Required]
     public int Cantidad { get; set; }
     [Required]

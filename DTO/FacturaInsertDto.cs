@@ -10,5 +10,6 @@ public class FacturaInsertDto
     public AplicaDescuento AplicaDescuento { get; set; }
     public decimal ValorDescuento { get; set; }
     public decimal ValorTotal { get; set; }
-    public ICollection<DetalleFactura>? ListDetalleFactura { get; set; }
+
+
 }
