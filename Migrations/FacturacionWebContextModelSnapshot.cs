@@ -61,9 +61,6 @@ namespace FacturacionWeb.Migrations
                     b.Property<int>("CodigoProducto")
                         .HasColumnType("int");
 
-                    b.Property<double>("DescuentoProducto")
-                        .HasColumnType("float");
-
                     b.Property<int>("ValorRegistro")
                         .HasColumnType("int");
 
@@ -84,9 +81,6 @@ namespace FacturacionWeb.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Codigo"));
 
-                    b.Property<int>("AplicaDescuento")
-                        .HasColumnType("int");
-
                     b.Property<string>("Cliente")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -99,9 +93,6 @@ namespace FacturacionWeb.Migrations
 
                     b.Property<int>("NumeroFactura")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("ValorDescuento")
-                        .HasColumnType("decimal(18, 2)");
 
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("decimal(18, 2)");

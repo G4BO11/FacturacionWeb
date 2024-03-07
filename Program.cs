@@ -10,11 +10,15 @@ builder.Services.AddControllersWithViews();
 
 // Repository
 builder.Services.AddScoped<IRepository<Producto>, ProductoRepository>();
+builder.Services.AddScoped<IRepository<Factura>, FacturaRepository>();
+builder.Services.AddScoped<IRepository<DetalleFactura>, DetalleFacturaRepository>();
 // Services
 builder.Services.AddScoped<ICommonService<ProductoDto, ProductoInsertDto>, ProductoService>();
+builder.Services.AddScoped<ICommonService<FacturaDto, FacturaInsertDto>, FacturaService>();
 
 //Entity Framework Injeccion
 builder.Services.AddDbContext<FacturacionWebContext>(options =>
+
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnection"));
 });

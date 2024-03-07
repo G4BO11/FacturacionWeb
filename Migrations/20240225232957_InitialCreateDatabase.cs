@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FacturacionWeb.Migrations
 {
     /// <inheritdoc />
-    public partial class StartDataBase : Migration
+    public partial class InitialCreateDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,8 +21,6 @@ namespace FacturacionWeb.Migrations
                     Cliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NIT = table.Column<int>(type: "int", nullable: false),
                     NumeroFactura = table.Column<int>(type: "int", nullable: false),
-                    AplicaDescuento = table.Column<int>(type: "int", nullable: false),
-                    ValorDescuento = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ValorTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
@@ -71,7 +69,6 @@ namespace FacturacionWeb.Migrations
                 {
                     Codigo = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DescuentoProducto = table.Column<double>(type: "float", nullable: false),
                     Cantidad = table.Column<int>(type: "int", nullable: false),
                     ValorRegistro = table.Column<int>(type: "int", nullable: false),
                     CodigoFactura = table.Column<int>(type: "int", nullable: false),

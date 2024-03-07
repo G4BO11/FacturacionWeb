@@ -1,8 +1,13 @@
+using FacturacionWeb.Models;
+
 namespace FacturacionWeb.DTO;
 public class FacturaDto
 {
     public int Codigo { get; set; }
     public DateTime Fecha { get; set; }
-    public string? Descripcion { get; set; }
-    public decimal ValorUnitario { get; set; }
+    public string? Cliente { get; set; }
+    public int NIT { get; set; }
+    public int NumeroFactura { get; set; }
+    public decimal ValorTotal { get; set; }
+    public ICollection<DetalleFactura>? DetalleFactura { get; set; }
 }
