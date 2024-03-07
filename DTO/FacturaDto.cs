@@ -9,5 +9,5 @@ public class FacturaDto
     public int NIT { get; set; }
     public int NumeroFactura { get; set; }
     public decimal ValorTotal { get; set; }
-    public virtual ICollection<DetalleFactura>? DetalleFactura { get; set; }
+    public ICollection<DetalleFactura>? DetalleFactura { get; set; }
 }
